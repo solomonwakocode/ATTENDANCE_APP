@@ -4,7 +4,10 @@ import axios from 'axios'
 import Image from '/student.png'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import Pattern from '/pattern.png'
+import Pattern from '/pattern.png';
+import Arrow from '/arrow.png';
+
+
 
 function Signup() {
     const navigate = useNavigate();
@@ -102,21 +105,33 @@ Sign Up </h2>
         </div>
 
         <div className="flex flex-col">
-          <label htmlFor="track" className="text-gray-700 mb-1">
-            Track
-          </label>
-          <select
-            id="track"
-            value={formData.track}
-            onChange={handleChange}
-            required
-            className="bg-white border border-gray-200 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400"
-          >
-            <option value="">Select Track</option>
-            <option value="Fullstack Development">Fullstack Development</option>
-            <option value="Backend Development">Backend Development</option>
-          </select>
-        </div>
+  <label htmlFor="track" className="text-gray-700 mb-1">
+    Track
+  </label>
+
+  <div className="relative">
+    <select
+      id="track"
+      value={formData.track}
+      onChange={handleChange}
+      required
+      className="w-full appearance-none bg-white border border-gray-200 rounded-lg
+                 px-4 py-2 pr-10 text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400"
+    >
+      <option value="">Select Track</option>
+      <option value="Fullstack Development">Fullstack Development</option>
+      <option value="Backend Development">Backend Development</option>
+    </select>
+
+   {/* Custom SVG as dropdown icon */}
+    <img
+      src= {Arrow}
+      alt="dropdown"
+      className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-8 w-8"
+    />
+  </div>
+</div>
+
 
         <div className="flex flex-col">
           <label htmlFor="password" className="text-gray-700 mb-1">
