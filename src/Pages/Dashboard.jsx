@@ -6,25 +6,49 @@ import TotalStudentCards from "../Components/TotalStudentCards";
 import AttendanceCards from "../Components/AttendanceCards";
 import Student_list_view from "../Components/Student_list_view";
 import Search_element from "../Components/Search_element";
-// import Table_Component from "../Components/Table_Component";
+import Table_Component from "../Components/Table_Component";
+import TopAttendance from "../Components/TopAttendance";
+import AttendanceBarChart from "../Components/AttendanceBarChart";
 
 function Dashboard() {
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row min-h-screen">
+      {/* Sidebar */}
       <Sidebar />
 
-      <div className="w-full pl-5 ">
+      {/* Main Content */}
+      <div className="flex-1 p-4 md:p-5">
+        {/* Admin profile */}
         <Adminprofile />
-        <div className="w-full h-[0.5px] bg-[#A8B9CA] "></div>
+
+        {/* Divider */}
+        <div className="w-full h-[0.5px] bg-[#A8B9CA] my-4"></div>
+
+        {/* Panel info */}
         <Panel_info />
-        <div className="flex space-x-10 mb-10">
+
+        {/* Cards Section */}
+        <div className="flex flex-col sm:flex-row sm:space-x-4 mb-6 space-y-4 sm:space-y-0 justify-center items-center">
           <TotalStudentCards />
           <AttendanceCards />
         </div>
-        <Student_list_view />
-        <Search_element />
-        {/* <Table_Component/> */}
 
+        {/* Student List */}
+        <Student_list_view />
+
+        {/* Search */}
+        <div className="my-4">
+          <Search_element />
+        </div>
+
+        {/* Table */}
+        <div className="overflow-x-auto">
+          <Table_Component />
+          <div className="flex">
+          <TopAttendance />
+          <AttendanceBarChart />
+          </div>
+        </div>
       </div>
     </div>
   );

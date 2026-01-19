@@ -5,7 +5,7 @@ import Profile from "/profile.png"
 
 export default function Sidebar() {
   return (
-    <div className="w-64 bg-gray-100 h-screen p-5 flex flex-col border-r border-gray-300">
+    <div className="w-70 bg-gray-100 h-screen p-5 flex flex-col border-r border-gray-300">
       <div className="flex justify-center mb-8">
         <img src={logo} alt="logo" className="w-24" />
       </div>
